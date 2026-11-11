@@ -1,0 +1,9 @@
+{
+  "built_utc": "2026-11-11T00:29:26+00:00",
+  "sources": {
+    "line": "https://data.geo.admin.ch/ch.bav.schienennetz/schienennetz/schienennetz_2056_de.gpkg",
+    "dem": "https://data.geo.admin.ch/ch.swisstopo.swissaltiregio/swissaltiregio/swissaltiregio_2056_5728.tif",
+    "smn": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-smn (hourly, historical_2020-2029, 2020-01-01..2025-12-31 UTC)",
+    "imis": "https://measurement-api.slf.ch/public/api/imis (30-min records, last 7 days at build time)"
+  }
+}

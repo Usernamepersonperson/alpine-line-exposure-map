@@ -1,0 +1,484 @@
+{
+  "line_km": 28.65,
+  "n_sections": 286,
+  "section_m": 100.0,
+  "reference_station": "GUE",
+  "ref_storm_rose": [
+    0.1045,
+    0.0405,
+    0.0004,
+    0.0011,
+    0.0007,
+    0.0019,
+    0.1543,
+    0.5424,
+    0.0758,
+    0.0056,
+    0.0019,
+    0.0,
+    0.0,
+    0.0015,
+    0.0078,
+    0.0617
+  ],
+  "ref_drift_rose_used": true,
+  "ref_drift_hours_per_year": 998.9377,
+  "wind_model_coef": {
+    "intercept": 1.7739005312095144,
+    "per_km_elev": 1.0184558973180347,
+    "per_deg_exposure": 0.09953673252042294
+  },
+  "snow_logistic": {
+    "elev_50pct_m": 1575.0,
+    "scale_m": 300.0,
+    "n_stations": 38
+  },
+  "validation": {
+    "smn_wind_mean_winter": {
+      "n_stations": 151,
+      "target": "wind_mean_winter",
+      "spearman_elev_obs": 0.3711308045697244,
+      "spearman_sx300_exposure_obs": 0.4398048100383408,
+      "spearman_sx300_exposure_vs_elev_residual": 0.455653537818055,
+      "storm_weights": [
+        0.0298,
+        0.0308,
+        0.0128,
+        0.0154,
+        0.0437,
+        0.0198,
+        0.0469,
+        0.0788,
+        0.0542,
+        0.0675,
+        0.0566,
+        0.1536,
+        0.0748,
+        0.0793,
+        0.1108,
+        0.1253
+      ],
+      "models": [
+        {
+          "model": "elevation",
+          "loo_rmse": 1.2373,
+          "loo_mae": 0.8951,
+          "loo_r2": 0.3683,
+          "spearman_pred_obs": 0.3584,
+          "rmse_change_vs_elev_pct": 0.0,
+          "rmse_diff_ci95_lo": 0.0,
+          "rmse_diff_ci95_hi": 0.0
+        },
+        {
+          "model": "elevation+sx300",
+          "loo_rmse": 1.1385,
+          "loo_mae": 0.781,
+          "loo_r2": 0.4652,
+          "spearman_pred_obs": 0.4671,
+          "rmse_change_vs_elev_pct": -7.9856,
+          "rmse_diff_ci95_lo": -0.1844,
+          "rmse_diff_ci95_hi": -0.0285
+        },
+        {
+          "model": "elevation+sx100",
+          "loo_rmse": 1.1762,
+          "loo_mae": 0.8159,
+          "loo_r2": 0.4292,
+          "spearman_pred_obs": 0.4169,
+          "rmse_change_vs_elev_pct": -4.9397,
+          "rmse_diff_ci95_lo": -0.1348,
+          "rmse_diff_ci95_hi": 0.0064
+        },
+        {
+          "model": "elevation+sx1000",
+          "loo_rmse": 1.1154,
+          "loo_mae": 0.7602,
+          "loo_r2": 0.4866,
+          "spearman_pred_obs": 0.5305,
+          "rmse_change_vs_elev_pct": -9.8462,
+          "rmse_diff_ci95_lo": -0.206,
+          "rmse_diff_ci95_hi": -0.0483
+        },
+        {
+          "model": "elevation+sx300_uniform",
+          "loo_rmse": 1.1382,
+          "loo_mae": 0.7763,
+          "loo_r2": 0.4654,
+          "spearman_pred_obs": 0.4815,
+          "rmse_change_vs_elev_pct": -8.007,
+          "rmse_diff_ci95_lo": -0.1907,
+          "rmse_diff_ci95_hi": -0.0209
+        },
+        {
+          "model": "elevation+tpi500",
+          "loo_rmse": 1.0224,
+          "loo_mae": 0.7077,
+          "loo_r2": 0.5687,
+          "spearman_pred_obs": 0.5341,
+          "rmse_change_vs_elev_pct": -17.3704,
+          "rmse_diff_ci95_lo": -0.3284,
+          "rmse_diff_ci95_hi": -0.1093
+        },
+        {
+          "model": "elevation+sx300+tpi500",
+          "loo_rmse": 1.0289,
+          "loo_mae": 0.7176,
+          "loo_r2": 0.5631,
+          "spearman_pred_obs": 0.5105,
+          "rmse_change_vs_elev_pct": -16.8374,
+          "rmse_diff_ci95_lo": -0.3239,
+          "rmse_diff_ci95_hi": -0.0977
+        }
+      ]
+    },
+    "smn_gust_p95_winter": {
+      "n_stations": 151,
+      "target": "gust_p95_winter",
+      "spearman_elev_obs": 0.3234573890568188,
+      "spearman_sx300_exposure_obs": 0.4615638019972207,
+      "spearman_sx300_exposure_vs_elev_residual": 0.44261066573719066,
+      "storm_weights": [
+        0.0298,
+        0.0308,
+        0.0128,
+        0.0154,
+        0.0437,
+        0.0198,
+        0.0469,
+        0.0788,
+        0.0542,
+        0.0675,
+        0.0566,
+        0.1536,
+        0.0748,
+        0.0793,
+        0.1108,
+        0.1253
+      ],
+      "models": [
+        {
+          "model": "elevation",
+          "loo_rmse": 3.6037,
+          "loo_mae": 2.7332,
+          "loo_r2": 0.3104,
+          "spearman_pred_obs": 0.3077,
+          "rmse_change_vs_elev_pct": 0.0,
+          "rmse_diff_ci95_lo": 0.0,
+          "rmse_diff_ci95_hi": 0.0
+        },
+        {
+          "model": "elevation+sx300",
+          "loo_rmse": 3.2214,
+          "loo_mae": 2.4945,
+          "loo_r2": 0.449,
+          "spearman_pred_obs": 0.432,
+          "rmse_change_vs_elev_pct": -10.609,
+          "rmse_diff_ci95_lo": -0.6462,
+          "rmse_diff_ci95_hi": -0.132
+        },
+        {
+          "model": "elevation+sx100",
+          "loo_rmse": 3.3451,
+          "loo_mae": 2.5099,
+          "loo_r2": 0.4058,
+          "spearman_pred_obs": 0.3851,
+          "rmse_change_vs_elev_pct": -7.1764,
+          "rmse_diff_ci95_lo": -0.4918,
+          "rmse_diff_ci95_hi": -0.0312
+        },
+        {
+          "model": "elevation+sx1000",
+          "loo_rmse": 3.1804,
+          "loo_mae": 2.4271,
+          "loo_r2": 0.4629,
+          "spearman_pred_obs": 0.466,
+          "rmse_change_vs_elev_pct": -11.7462,
+          "rmse_diff_ci95_lo": -0.7006,
+          "rmse_diff_ci95_hi": -0.1478
+        },
+        {
+          "model": "elevation+sx300_uniform",
+          "loo_rmse": 3.1899,
+          "loo_mae": 2.4827,
+          "loo_r2": 0.4597,
+          "spearman_pred_obs": 0.4681,
+          "rmse_change_vs_elev_pct": -11.4832,
+          "rmse_diff_ci95_lo": -0.6954,
+          "rmse_diff_ci95_hi": -0.1522
+        },
+        {
+          "model": "elevation+tpi500",
+          "loo_rmse": 2.8459,
+          "loo_mae": 2.2386,
+          "loo_r2": 0.5699,
+          "spearman_pred_obs": 0.5057,
+          "rmse_change_vs_elev_pct": -21.0276,
+          "rmse_diff_ci95_lo": -1.1374,
+          "rmse_diff_ci95_hi": -0.3787
+        },
+        {
+          "model": "elevation+sx300+tpi500",
+          "loo_rmse": 2.8572,
+          "loo_mae": 2.237,
+          "loo_r2": 0.5665,
+          "spearman_pred_obs": 0.5077,
+          "rmse_change_vs_elev_pct": -20.7134,
+          "rmse_diff_ci95_lo": -1.1398,
+          "rmse_diff_ci95_hi": -0.3728
+        }
+      ]
+    },
+    "smn_alpine_ge1000m_wind_mean_winter": {
+      "n_stations": 60,
+      "target": "wind_mean_winter",
+      "spearman_elev_obs": 0.5712499479566008,
+      "spearman_sx300_exposure_obs": 0.6257849402611837,
+      "spearman_sx300_exposure_vs_elev_residual": 0.4081689358155044,
+      "storm_weights": [
+        0.0298,
+        0.0308,
+        0.0128,
+        0.0154,
+        0.0437,
+        0.0198,
+        0.0469,
+        0.0788,
+        0.0542,
+        0.0675,
+        0.0566,
+        0.1536,
+        0.0748,
+        0.0793,
+        0.1108,
+        0.1253
+      ],
+      "models": [
+        {
+          "model": "elevation",
+          "loo_rmse": 1.7,
+          "loo_mae": 1.3042,
+          "loo_r2": 0.3118,
+          "spearman_pred_obs": 0.5293,
+          "rmse_change_vs_elev_pct": 0.0,
+          "rmse_diff_ci95_lo": 0.0,
+          "rmse_diff_ci95_hi": 0.0
+        },
+        {
+          "model": "elevation+sx300",
+          "loo_rmse": 1.6114,
+          "loo_mae": 1.1676,
+          "loo_r2": 0.3817,
+          "spearman_pred_obs": 0.6409,
+          "rmse_change_vs_elev_pct": -5.2116,
+          "rmse_diff_ci95_lo": -0.2047,
+          "rmse_diff_ci95_hi": 0.0062
+        },
+        {
+          "model": "elevation+sx100",
+          "loo_rmse": 1.6614,
+          "loo_mae": 1.2342,
+          "loo_r2": 0.3427,
+          "spearman_pred_obs": 0.5506,
+          "rmse_change_vs_elev_pct": -2.2706,
+          "rmse_diff_ci95_lo": -0.1243,
+          "rmse_diff_ci95_hi": 0.0371
+        },
+        {
+          "model": "elevation+sx1000",
+          "loo_rmse": 1.5725,
+          "loo_mae": 1.1151,
+          "loo_r2": 0.4112,
+          "spearman_pred_obs": 0.6922,
+          "rmse_change_vs_elev_pct": -7.4984,
+          "rmse_diff_ci95_lo": -0.2524,
+          "rmse_diff_ci95_hi": -0.0019
+        },
+        {
+          "model": "elevation+sx300_uniform",
+          "loo_rmse": 1.615,
+          "loo_mae": 1.1632,
+          "loo_r2": 0.3789,
+          "spearman_pred_obs": 0.655,
+          "rmse_change_vs_elev_pct": -4.9976,
+          "rmse_diff_ci95_lo": -0.2057,
+          "rmse_diff_ci95_hi": 0.0271
+        },
+        {
+          "model": "elevation+tpi500",
+          "loo_rmse": 1.4226,
+          "loo_mae": 0.9983,
+          "loo_r2": 0.5181,
+          "spearman_pred_obs": 0.7255,
+          "rmse_change_vs_elev_pct": -16.3154,
+          "rmse_diff_ci95_lo": -0.4528,
+          "rmse_diff_ci95_hi": -0.0823
+        },
+        {
+          "model": "elevation+sx300+tpi500",
+          "loo_rmse": 1.4215,
+          "loo_mae": 1.0193,
+          "loo_r2": 0.5189,
+          "spearman_pred_obs": 0.7106,
+          "rmse_change_vs_elev_pct": -16.3843,
+          "rmse_diff_ci95_lo": -0.4672,
+          "rmse_diff_ci95_hi": -0.0686
+        }
+      ]
+    },
+    "imis_week_wind_mean": {
+      "n_stations": 200,
+      "target": "wind_mean_week",
+      "spearman_elev_obs": 0.39583616156584334,
+      "spearman_sx300_exposure_obs": 0.59539188479712,
+      "spearman_sx300_exposure_vs_elev_residual": 0.46789769744243614,
+      "storm_weights": [
+        0.0214,
+        0.0197,
+        0.0204,
+        0.0305,
+        0.0335,
+        0.055,
+        0.0863,
+        0.0971,
+        0.1141,
+        0.1379,
+        0.1179,
+        0.1052,
+        0.0719,
+        0.0424,
+        0.0296,
+        0.0172
+      ],
+      "models": [
+        {
+          "model": "elevation",
+          "loo_rmse": 1.3958,
+          "loo_mae": 1.0555,
+          "loo_r2": 0.1738,
+          "spearman_pred_obs": 0.3823,
+          "rmse_change_vs_elev_pct": 0.0,
+          "rmse_diff_ci95_lo": 0.0,
+          "rmse_diff_ci95_hi": 0.0
+        },
+        {
+          "model": "elevation+sx300",
+          "loo_rmse": 1.1836,
+          "loo_mae": 0.8746,
+          "loo_r2": 0.4059,
+          "spearman_pred_obs": 0.6207,
+          "rmse_change_vs_elev_pct": -15.2014,
+          "rmse_diff_ci95_lo": -0.318,
+          "rmse_diff_ci95_hi": -0.1113
+        },
+        {
+          "model": "elevation+sx100",
+          "loo_rmse": 1.2107,
+          "loo_mae": 0.8895,
+          "loo_r2": 0.3784,
+          "spearman_pred_obs": 0.5828,
+          "rmse_change_vs_elev_pct": -13.2597,
+          "rmse_diff_ci95_lo": -0.2865,
+          "rmse_diff_ci95_hi": -0.0847
+        },
+        {
+          "model": "elevation+sx1000",
+          "loo_rmse": 1.1518,
+          "loo_mae": 0.8526,
+          "loo_r2": 0.4374,
+          "spearman_pred_obs": 0.6369,
+          "rmse_change_vs_elev_pct": -17.4809,
+          "rmse_diff_ci95_lo": -0.3527,
+          "rmse_diff_ci95_hi": -0.1425
+        },
+        {
+          "model": "elevation+sx300_uniform",
+          "loo_rmse": 1.129,
+          "loo_mae": 0.8221,
+          "loo_r2": 0.4595,
+          "spearman_pred_obs": 0.6524,
+          "rmse_change_vs_elev_pct": -19.1141,
+          "rmse_diff_ci95_lo": -0.3839,
+          "rmse_diff_ci95_hi": -0.1543
+        },
+        {
+          "model": "elevation+tpi500",
+          "loo_rmse": 1.0473,
+          "loo_mae": 0.7721,
+          "loo_r2": 0.5349,
+          "spearman_pred_obs": 0.6502,
+          "rmse_change_vs_elev_pct": -24.9693,
+          "rmse_diff_ci95_lo": -0.48,
+          "rmse_diff_ci95_hi": -0.2124
+        },
+        {
+          "model": "elevation+sx300+tpi500",
+          "loo_rmse": 1.0552,
+          "loo_mae": 0.7763,
+          "loo_r2": 0.5279,
+          "spearman_pred_obs": 0.6471,
+          "rmse_change_vs_elev_pct": -24.4028,
+          "rmse_diff_ci95_lo": -0.4683,
+          "rmse_diff_ci95_hi": -0.2067
+        }
+      ]
+    }
+  },
+  "headline": {
+    "n_stations": 151,
+    "rmse_elev": 1.2372723804376546,
+    "rmse_elev_sx300": 1.1384689426653056,
+    "rmse_change_pct": -7.985585012202385,
+    "spearman_elev_sx300": 0.4670512373649354,
+    "spearman_elev": 0.35843848030672704,
+    "spearman_exposure_vs_residual": 0.455653537818055
+  },
+  "robustness": {
+    "spearman_section_wind_pred_sx_vs_tpi": 0.4792647660426864,
+    "top_wind_within_300m_sx_vs_tpi": 4,
+    "top_n": 10
+  },
+  "grade_flag_sections": 13,
+  "top_priority_km": [
+    [
+      11.4,
+      11.5
+    ],
+    [
+      12.6,
+      12.7
+    ],
+    [
+      11.9,
+      12.0
+    ],
+    [
+      13.8,
+      13.9
+    ],
+    [
+      2.9,
+      3.0
+    ],
+    [
+      10.9,
+      11.0
+    ],
+    [
+      4.8,
+      4.9
+    ],
+    [
+      12.9,
+      13.0
+    ],
+    [
+      14.4,
+      14.5
+    ],
+    [
+      7.1,
+      7.2
+    ]
+  ],
+  "n_hotspots": 11
+}

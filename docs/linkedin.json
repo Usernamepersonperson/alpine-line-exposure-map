@@ -1,0 +1,13 @@
+{
+  "claim": "Which 100 m of a mountain line catch the most storm wind and drifting snow, from open data",
+  "data_label": "open data: swisstopo DEM, MeteoSwiss stations 2020-2025, SLF IMIS, federal rail network",
+  "stats": [
+    ["286", "100 m sections ranked on a 28.6 km line", "accent"],
+    ["-8 %", "wind error vs elevation, 151 stations", "green"],
+    ["-17 %", "simpler TPI index did better", "amber"]
+  ],
+  "limit": "No closure or drift records for the line itself, so the ranking is not yet checked against the track.",
+  "alt": "Dark map of a mountain rail line over an Alpine pass, coloured by exposure priority with the top five 100 m sections numbered, and a profile of priority along 28.6 km.",
+  "hashtags": ["#OpenData", "#Railways", "#Infrastructure", "#Snow", "#Wind", "#GIS", "#Python"],
+  "post": "Snow drifts and crosswind gusts close mountain lines, but sensors, snow fences and watch posts can only go in a few places. Where first?\n\nI built an open-source tool that cuts a line into 100 m sections and ranks them by terrain exposure. It computes the upwind shelter index Sx for 16 wind directions from a 10 m terrain model, weights them with the storm and drifting-snow directions of the nearest crest weather station, and scores each section for crosswind storm exposure and a drift index.\n\nOn a 28.6 km mountain rail line over an Alpine pass it ranks 286 sections; the top stretch is about 900 m long, on the descent from the pass.\n\nI also tested the index on 151 weather stations it was not fitted on. Adding Sx to elevation cut the error in winter mean wind by 8 % (1.24 to 1.14 m/s). The honest part: a simpler topographic position index cut it by 17 %, and weighting by storm direction did not help.\n\nNot verified yet: there are no closure or drift records for the line itself, and existing snow sheds are unknown to the model.\n\nIf you maintain an exposed line or road, what would you use as ground truth?\n\nCode: https://github.com/Usernamepersonperson/alpine-line-exposure-map"
+}

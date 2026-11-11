@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alpine-line-exposure-map"
+version = "0.1.0"
+description = "Rank 100 m sections of a mountain rail, road or ropeway line by terrain exposure to wind and drifting snow, validated against open station data."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Victor Bonilla" }]
+dependencies = ["numpy>=1.26", "pandas>=2.1", "matplotlib>=3.8"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+fetch = ["rasterio>=1.3"]
+
+[project.scripts]
+alpine-line-exposure = "alpine_line_exposure.cli:main"
+
+[tool.setuptools]
+packages = ["alpine_line_exposure"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:asyncio"
+
+[tool.ruff]
+line-length = 140
+target-version = "py311"
+extend-exclude = ["cache"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
