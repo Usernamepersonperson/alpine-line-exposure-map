@@ -36,7 +36,7 @@ All numbers come from `python -m alpine_line_exposure demo` on the committed der
 | Reference crest station, storm hours (top 10 % winter wind) | 54 % from SSE, 15 % from SE (foehn), 10 % from N |
 | Heuristic drifting-snow hours at that station (snow >= 10 cm, T < 0 C, wind >= 8 m/s) | about 1,000 h per year |
 | Snow >= 20 cm on 50 % of winter days at (logistic fit, 38 stations) | 1,575 m |
-| Top priority stretch | km 11.3-12.2 (9 sections, about 1,870 m), then km 12.5-13.1 |
+| Top priority stretch | km 11.3-12.2 (9 sections, elevation about 1,870 m, below the summit at km 9.8), then km 12.5-13.1 |
 | Sections flagged by DEM grade > 15 % (probably tunnel, gallery or cutting) | 13 |
 
 Top-10 lists are in `results/top_priority.csv`, `results/top_wind.csv`, `results/top_drift.csv`; every section in `results/sections_ranked.csv`; stretches in `results/hotspots.csv`.
@@ -87,7 +87,7 @@ flowchart LR
 - **Terrain:** swissALTIRegio 10 m digital terrain model, read as windows from the cloud-optimised GeoTIFF on data.geo.admin.ch. Source: Federal Office of Topography swisstopo. swisstopo free geodata (OGD) terms: use, processing, redistribution and commercial use allowed; the source reference is mandatory. `data/corridor_dem_50m.npz` is a derived 50 m block mean of the corridor, for the figure only.
 - **Line geometry:** "Railway network" basic data set (`ch.bav.schienennetz`, state 2026-07-01). Source: Federal Office of Transport FOT. Licence: opendata.swiss "Open use. Must provide the source." `data/line.csv` holds the derived centreline coordinates only (no attributes).
 - **Weather:** MeteoSwiss SwissMetNet automatic stations, hourly values (`ch.meteoschweiz.ogd-smn`, files `*_h_historical_2020-2029`, 2020-01-01 to 2025-12-31 UTC), licence CC BY 4.0. Source: MeteoSwiss. `data/stations_smn.csv` holds per-station statistics derived from them.
-- **Alpine stations:** IMIS network, public measurement API (30-min values; the public API serves only the last 7 days, so this is a one-week snapshot: 2026-11-04 to 2026-11-11). Licence CC BY 4.0. Source: WSL Institute for Snow and Avalanche Research SLF (www.slf.ch). `data/stations_imis.csv` holds derived per-station statistics.
+- **Alpine stations:** IMIS network, public measurement API (30-min values; the public API serves only the last 7 days, so this is a one-week snapshot: 2026-11-04 to 2026-11-11). Licence CC BY 4.0. Source: WSL Institute for Snow and Avalanche Research SLF (www.slf.ch); IMIS data DOI https://doi.org/10.16904/envidat.406. `data/stations_imis.csv` holds derived per-station statistics.
 - OpenStreetMap is not used.
 
 ## What is not verified yet
