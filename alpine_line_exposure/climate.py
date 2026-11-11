@@ -22,9 +22,16 @@ HOURLY_COLS = {
 }
 
 
+def _is_path(obj) -> bool:
+    """A Path, or a short single-line string naming an existing file (CSV text always contains newlines)."""
+    if isinstance(obj, Path):
+        return True
+    return isinstance(obj, str) and "\n" not in obj and len(obj) < 1024 and Path(obj).exists()
+
+
 def read_smn_meta(path_or_text) -> pd.DataFrame:
     """SwissMetNet station list -> abbr, name, elev, e, n, lat, lon, exposition."""
-    if isinstance(path_or_text, (str, Path)) and Path(str(path_or_text)).exists():
+    if _is_path(path_or_text):
         raw = Path(path_or_text).read_bytes()
     else:
         raw = path_or_text.encode("utf-8") if isinstance(path_or_text, str) else bytes(path_or_text)
@@ -50,7 +57,7 @@ def read_smn_meta(path_or_text) -> pd.DataFrame:
 
 def parse_smn_hourly(path_or_text) -> pd.DataFrame:
     """Parse a SwissMetNet hourly CSV into time_utc + the columns in HOURLY_COLS (renamed). Missing columns -> NaN."""
-    if isinstance(path_or_text, (str, Path)) and Path(str(path_or_text)).exists():
+    if _is_path(path_or_text):
         src = path_or_text
     else:
         src = io.StringIO(path_or_text)
