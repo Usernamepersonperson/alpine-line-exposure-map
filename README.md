@@ -100,4 +100,4 @@ flowchart LR
 
 ## Licence
 
-MIT, Copyright (c) 2026 Victor Bonilla. Data remain under their own terms (see Data sources).
+MIT, Copyright (c) 2026 VB-Builds. Data remain under their own terms (see Data sources).

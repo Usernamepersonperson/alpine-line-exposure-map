@@ -9,7 +9,7 @@ description = "Rank 100 m sections of a mountain rail, road or ropeway line by t
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
-authors = [{ name = "Victor Bonilla" }]
+authors = [{ name = "VB-Builds" }]
 dependencies = ["numpy>=1.26", "pandas>=2.1", "matplotlib>=3.8"]
 
 [project.optional-dependencies]
